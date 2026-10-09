@@ -10,8 +10,9 @@ class Database {
             $name = getenv('DB_NAME');
             $user = getenv('DB_USER');
             $password = getenv('DB_PASS');
+            $isDevelopment = getenv('APP_ENV') === 'development';
             if ($host === false || $host === '' || $name === false || $name === '' ||
-                $user === false || $user === '' || $password === false || $password === '') {
+                $user === false || $user === '' || $password === false || ($password === '' && !$isDevelopment)) {
                 throw new RuntimeException('Database environment variables are not configured.');
             }
 

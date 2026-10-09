@@ -1,6 +1,17 @@
 <?php
 declare(strict_types=1);
 
+$serverName = $_SERVER['SERVER_NAME'] ?? '';
+$isLocalRuntime = PHP_SAPI === 'cli' || in_array($serverName, ['localhost', '127.0.0.1'], true);
+$appEnvironment = getenv('APP_ENV');
+if ($isLocalRuntime && ($appEnvironment === false || $appEnvironment === 'development')) {
+	if ($appEnvironment === false) putenv('APP_ENV=development');
+	if (getenv('DB_HOST') === false || getenv('DB_HOST') === '') putenv('DB_HOST=127.0.0.1');
+	if (getenv('DB_NAME') === false || getenv('DB_NAME') === '') putenv('DB_NAME=greek_recipe_hub');
+	if (getenv('DB_USER') === false || getenv('DB_USER') === '') putenv('DB_USER=root');
+	if (getenv('DB_PASS') === false) putenv('DB_PASS=');
+}
+
 $isProduction = getenv('APP_ENV') === 'production';
 session_set_cookie_params([
 	'lifetime' => 0,

@@ -1,17 +1,18 @@
 <?php
+declare(strict_types=1);
+
 /**
  * Test data seeder for Greek Recipe Hub.
- * Put in the project root, then run:  php seed.php   (or open /seed.php?confirm=1)
+ * Run from the project root with: php seed.php
  * Re-runnable: it removes the seed users first (ON DELETE CASCADE wipes their
  * recipes, ingredients, comments and favorites), then inserts fresh data.
- * DELETE THIS FILE before submitting or deploying.
+ * This script is CLI-only; remove it before submitting or deploying.
  */
-require_once __DIR__ . '/classes/Database.php';
-
-if (PHP_SAPI !== 'cli' && ($_GET['confirm'] ?? '') !== '1') {
-    exit('Add ?confirm=1 to run the seeder.');
+if (PHP_SAPI !== 'cli') {
+    http_response_code(404);
+    exit;
 }
-header('Content-Type: text/plain; charset=utf-8');
+require_once __DIR__ . '/includes/init.php';
 
 $db = Database::get();
 $password = 'Test1234'; // letter + number, passes the site's regex
