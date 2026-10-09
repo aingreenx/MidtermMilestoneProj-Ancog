@@ -23,7 +23,8 @@ if (list) {
 }
 // Favorites without reload
 document.querySelectorAll('.fav-btn').forEach(btn => btn.addEventListener('click', async () => {
-  const res = await fetch('favorite.php', { method: 'POST', body: new URLSearchParams({ id: btn.dataset.id }) });
+  const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content ?? '';
+  const res = await fetch('favorite.php', { method: 'POST', body: new URLSearchParams({ id: btn.dataset.id, csrf_token: csrfToken }) });
   const data = await res.json();
   btn.textContent = data.favorited ? 'Remove from favorites' : 'Save to favorites';
 }));

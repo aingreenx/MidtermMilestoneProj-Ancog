@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Recipes from Greek home kitchens, served family-style.">
+  <title>Greek Recipe Hub | Rustic Taverna</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav class="topnav" aria-label="Main navigation">
+    <a class="brand" href="index.html">Greek Recipe Hub</a>
+    <div class="links">
+      <a href="#recipes">Recipes</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">Our table</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero-banner greek-border" aria-labelledby="home-title">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Greek food, made for gathering</p>
+        <h1 id="home-title">Bring the Greek table home</h1>
+        <p class="hero-copy">Recipes passed around the table, gathered from home cooks and kitchens across Greece.</p>
+        <form class="search-bar" action="../index.php" method="get" role="search">
+          <input type="search" name="q" placeholder="Search recipes or ingredients" aria-label="Search recipes or ingredients">
+          <select name="cat" aria-label="Filter by category">
+            <option value="0">All categories</option>
+            <option value="1">Meze (Appetizers)</option>
+            <option value="2">Salads</option>
+            <option value="3">Seafood</option>
+            <option value="4">Sweets</option>
+          </select>
+          <button class="btn" type="submit">Search</button>
+        </form>
+        <nav class="category-pills" id="categories" aria-label="Browse recipe categories">
+          <a class="active" href="../index.php">All recipes</a>
+          <a href="../index.php?cat=1">Meze</a>
+          <a href="../index.php?cat=2">Salads</a>
+          <a href="../index.php?cat=3">Seafood</a>
+          <a href="../index.php?cat=4">Sweets</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="recipe-section" id="recipes" aria-labelledby="recipes-title">
+      <div class="section-heading">
+        <div>
+          <p class="hero-eyebrow">Fresh from our kitchens</p>
+          <h2 id="recipes-title">Newest from the table</h2>
+        </div>
+        <p>Four recipes to start with</p>
+      </div>
+
+      <div class="recipe-grid">
+        <article class="recipe-card">
+          <img class="recipe-card-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A colorful platter for a Greek meze table" loading="lazy" width="900" height="675">
+          <div class="recipe-card-body">
+            <span class="tag">Meze (Appetizers)</span>
+            <h2><a href="#recipe-meze">Roasted peppers with herbs</a><span class="favorite-star" aria-label="Not favorited">☆</span></h2>
+            <p>Sweet peppers, olive oil, and a bright handful of garden herbs.</p>
+            <small>By Maria &middot; From the family table</small>
+          </div>
+        </article>
+
+        <article class="recipe-card">
+          <img class="recipe-card-image" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A fresh seasonal salad with greens and vegetables" loading="lazy" width="900" height="675">
+          <div class="recipe-card-body">
+            <span class="tag">Salads</span>
+            <h2><a href="#recipe-salad">Village tomato and cucumber salad</a><span class="favorite-star" aria-label="Favorited">★</span></h2>
+            <p>Ripe tomatoes, crisp cucumber, olives, and a little feta.</p>
+            <small>By Eleni &middot; A summer favorite</small>
+          </div>
+        </article>
+
+        <article class="recipe-card">
+          <img class="recipe-card-image" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Fresh fish prepared with herbs and lemon" loading="lazy" width="900" height="675">
+          <div class="recipe-card-body">
+            <span class="tag">Seafood</span>
+            <h2><a href="#recipe-fish">Lemon and oregano baked fish</a><span class="favorite-star" aria-label="Not favorited">☆</span></h2>
+            <p>Simply seasoned fish with lemon, oregano, and olive oil.</p>
+            <small>By Nikos &middot; Sunday lunch</small>
+          </div>
+        </article>
+
+        <article class="recipe-card">
+          <img class="recipe-card-image" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="A small bowl of honeyed Greek-style dessert" loading="lazy" width="900" height="675">
+          <div class="recipe-card-body">
+            <span class="tag">Sweets</span>
+            <h2><a href="#recipe-sweet">Yogurt with honey and walnuts</a><span class="favorite-star" aria-label="Not favorited">☆</span></h2>
+            <p>Thick yogurt, local honey, and toasted walnuts to finish.</p>
+            <small>By Sofia &middot; Ready in five minutes</small>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot greek-border" id="about">Greek Recipe Hub · Made for sharing around the table</footer>
+</body>
+</html>
